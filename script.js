@@ -225,7 +225,7 @@ function initMatrixBackground() {
     if (!canvas) return;
 
     const ctx = canvas.getContext('2d');
-    
+
     function resizeCanvas() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
@@ -235,7 +235,7 @@ function initMatrixBackground() {
 
     const characters = '0123456789Σ∫∂∇∞λθπ+-*/=';
     const charArray = characters.split('');
-    
+
     const fontSize = 16;
     let columns = 0;
     let rows = 0;
@@ -260,14 +260,14 @@ function initMatrixBackground() {
             }
         }
     }
-    
+
     initGrid();
 
     let mouse = { x: -1000, y: -1000 };
     document.addEventListener('mousemove', (e) => {
         const nav = document.querySelector('.navbar');
         const isHoveringInteractive = e.target.closest('a, button, .btn, .social-link, .nav-item');
-        
+
         if ((nav && e.clientY < nav.offsetHeight) || isHoveringInteractive) {
             mouse.x = -1000;
             mouse.y = -1000;
@@ -277,7 +277,7 @@ function initMatrixBackground() {
             mouse.y = e.clientY - rect.top;
         }
     });
-    
+
     document.addEventListener('mouseleave', () => {
         mouse.x = -1000;
         mouse.y = -1000;
@@ -288,20 +288,20 @@ function initMatrixBackground() {
     function draw() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.font = fontSize + 'px monospace';
-        
+
         // Update drops
         for (let i = 0; i < columns; i++) {
             drops[i] += 0.5; // speed
-            
+
             let dropPos = Math.floor(drops[i]);
-            
+
             if (dropPos >= 0 && dropPos < rows) {
                 if (Math.random() > 0.8) {
-                     grid[i][dropPos].char = charArray[Math.floor(Math.random() * charArray.length)];
+                    grid[i][dropPos].char = charArray[Math.floor(Math.random() * charArray.length)];
                 }
                 grid[i][dropPos].targetOpacity = 0.4;
             }
-            
+
             if (drops[i] > rows + 10 && Math.random() > 0.98) {
                 drops[i] = -Math.random() * rows;
             }
@@ -311,34 +311,44 @@ function initMatrixBackground() {
         for (let i = 0; i < columns; i++) {
             for (let j = 0; j < rows; j++) {
                 let cell = grid[i][j];
-                
+
                 cell.targetOpacity -= 0.01;
                 if (cell.targetOpacity < 0) cell.targetOpacity = 0;
-                
+
                 let currentOp = cell.targetOpacity;
-                
+
                 const x = i * fontSize;
                 const y = j * fontSize;
-                const dx = x + fontSize/2 - mouse.x;
-                const dy = y + fontSize/2 - mouse.y;
-                const distance = Math.sqrt(dx*dx + dy*dy);
-                
+                const dx = x + fontSize / 2 - mouse.x;
+                const dy = y + fontSize / 2 - mouse.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+
                 if (distance < 120) {
                     const intensity = 1 - (distance / 120);
                     currentOp = Math.max(currentOp, intensity * 0.8);
                 }
-                
+
                 if (currentOp > 0.01) {
                     if (currentOp > 0.6) {
-                         ctx.fillStyle = `rgba(255, 255, 255, ${currentOp})`;
+                        ctx.fillStyle = `rgba(255, 255, 255, ${currentOp})`;
                     } else {
-                         ctx.fillStyle = `rgba(200, 255, 0, ${currentOp})`;
+                        ctx.fillStyle = `rgba(200, 255, 0, ${currentOp})`;
                     }
                     ctx.fillText(cell.char, x, y);
                 }
             }
         }
     }
-    
+
     setInterval(draw, 50);
 }
+
+// Dynamic Tab Title
+let originalTitle = document.title;
+document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+        document.title = "👋 Come back!";
+    } else {
+        document.title = originalTitle;
+    }
+});
