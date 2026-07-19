@@ -227,11 +227,15 @@ function initMatrixBackground() {
     const ctx = canvas.getContext('2d');
 
     function resizeCanvas() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        const dpr = window.devicePixelRatio || 1;
+        canvas.width = window.innerWidth * dpr;
+        canvas.height = window.innerHeight * dpr;
+        canvas.style.width = `${window.innerWidth}px`;
+        canvas.style.height = `${window.innerHeight}px`;
+        ctx.scale(dpr, dpr);
+        if (typeof initGrid === 'function' && columns !== 0) initGrid();
     }
     window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
 
     const characters = '0123456789Σ∫∂∇∞λθπ+-*/=';
     const charArray = characters.split('');
@@ -243,8 +247,8 @@ function initMatrixBackground() {
 
     let drops = [];
     function initGrid() {
-        columns = Math.floor(canvas.width / fontSize) + 1;
-        rows = Math.floor(canvas.height / fontSize) + 1;
+        columns = Math.floor(window.innerWidth / fontSize) + 1;
+        rows = Math.floor(window.innerHeight / fontSize) + 1;
         grid = [];
         for (let i = 0; i < columns; i++) {
             grid[i] = [];
@@ -261,6 +265,7 @@ function initMatrixBackground() {
         }
     }
 
+    resizeCanvas();
     initGrid();
 
     let mouse = { x: -1000, y: -1000 };
@@ -351,4 +356,26 @@ document.addEventListener("visibilitychange", () => {
     } else {
         document.title = originalTitle;
     }
+});
+
+// Scroll to Top Button
+const scrollTopBtn = document.createElement('button');
+scrollTopBtn.innerHTML = '<span class="material-icons-outlined">arrow_upward</span>';
+scrollTopBtn.className = 'scroll-top-btn';
+scrollTopBtn.setAttribute('aria-label', 'Scroll to top');
+document.body.appendChild(scrollTopBtn);
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 500) {
+        scrollTopBtn.classList.add('visible');
+    } else {
+        scrollTopBtn.classList.remove('visible');
+    }
+});
+
+scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 });
