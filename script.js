@@ -358,24 +358,4 @@ document.addEventListener("visibilitychange", () => {
     }
 });
 
-// Scroll to Top Button
-const scrollTopBtn = document.createElement('button');
-scrollTopBtn.innerHTML = '<span class="material-icons-outlined">arrow_upward</span>';
-scrollTopBtn.className = 'scroll-top-btn';
-scrollTopBtn.setAttribute('aria-label', 'Scroll to top');
-document.body.appendChild(scrollTopBtn);
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 500) {
-        scrollTopBtn.classList.add('visible');
-    } else {
-        scrollTopBtn.classList.remove('visible');
-    }
-});
-
-scrollTopBtn.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
