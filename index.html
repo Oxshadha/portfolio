@@ -21,7 +21,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=8">
 </head>
 
 <body>
@@ -41,20 +41,6 @@
             </div>
             <p class="loader-text">Computing...</p>
         </div>
-    </div>
-
-    <!-- Floating Math Symbols Background -->
-    <div class="math-background" aria-hidden="true">
-        <span class="float-symbol" style="--delay: 0s; --x: 5%; --y: 20%;">Σ</span>
-        <span class="float-symbol" style="--delay: 2s; --x: 15%; --y: 60%;">∫</span>
-        <span class="float-symbol" style="--delay: 4s; --x: 85%; --y: 30%;">∂</span>
-        <span class="float-symbol" style="--delay: 1s; --x: 90%; --y: 70%;">∇</span>
-        <span class="float-symbol" style="--delay: 3s; --x: 75%; --y: 15%;">λ</span>
-        <span class="float-symbol" style="--delay: 5s; --x: 25%; --y: 80%;">θ</span>
-        <span class="float-symbol matrix" style="--delay: 2.5s; --x: 10%; --y: 45%;">[A]</span>
-        <span class="float-symbol" style="--delay: 1.5s; --x: 80%; --y: 55%;">→</span>
-        <span class="float-symbol" style="--delay: 3.5s; --x: 50%; --y: 10%;">∞</span>
-        <span class="float-symbol" style="--delay: 4.5s; --x: 60%; --y: 85%;">π</span>
     </div>
 
     <!-- Navigation -->
@@ -79,15 +65,18 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
+        <!-- Floating Math Symbols Background -->
+        <canvas id="matrix-canvas" class="math-background" aria-hidden="true"></canvas>
         <div class="hero-container">
             <div class="hero-content">
                 <p class="hero-greeting">Hello, I'm</p>
                 <h1 class="hero-name">Oshadha <span class="highlight">Kariyawasam</span></h1>
-                <h2 class="hero-title">AI & Machine Learning Student</h2>
-                <p class="hero-description">
-                    Undergraduate at the University of Moratuwa, Faculty of IT.
-                    Passionate about building intelligent systems, computational mathematics, and innovative solutions.
-                </p>
+                <div class="hero-terminal">
+                    <span class="prompt-user">&gt; oshadha@matrix:~$</span>
+                    <span class="terminal-text">
+                        Building intelligent systems, exploring computational mathematics, statistics, and creating innovative AI solutions.
+                    </span>
+                </div>
                 <div class="hero-buttons">
                     <a href="#projects" class="btn btn-primary">View Projects</a>
                     <a href="#contact" class="btn btn-secondary">Contact Me</a>
@@ -109,11 +98,17 @@
                                 d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                         </svg>
                     </a>
+                    </a>
                     <a href="mailto:kariyawasamoshadha@gmail.com" class="social-link" aria-label="Email">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                             fill="currentColor">
                             <path
                                 d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z" />
+                        </svg>
+                    </a>
+                    <a href="https://medium.com/@kariyawasamoshadha" target="_blank" rel="noopener" class="social-link" aria-label="Medium">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M2.846 6.887c.03-.295-.083-.586-.303-.784l-2.24-2.7v-.403h6.958l5.378 11.795 4.728-11.795h6.633v.403l-1.916 1.837c-.165.126-.247.333-.213.538v13.498c-.034.204.048.411.213.537l1.871 1.837v.403h-9.412v-.403l1.939-1.882c.19-.19.19-.246.19-.537v-10.91l-5.389 13.688h-.728l-6.275-13.688v9.174c-.052.385.076.774.347 1.052l2.52 3.058v.404h-7.148v-.404l2.521-3.058c.27-.279.39-.67.338-1.052v-10.608z"/>
                         </svg>
                     </a>
                 </div>
@@ -122,20 +117,14 @@
                 <div class="hero-avatar">
                     <div class="avatar-glow"></div>
                     <div class="avatar-circle">
-                        <img src="Profile pictures/DSC00757 3.jpg" alt="Oshadha Kariyawasam" class="avatar-image">
+                        <img src="Profile pictures/profile picture.jpg" alt="Oshadha Kariyawasam" class="avatar-image">
                     </div>
-                    <!-- Math decorations around avatar -->
-                    <span class="avatar-math" style="--angle: 0deg;">Σ</span>
-                    <span class="avatar-math" style="--angle: 72deg;">∫</span>
-                    <span class="avatar-math" style="--angle: 144deg;">∂</span>
-                    <span class="avatar-math" style="--angle: 216deg;">∇</span>
-                    <span class="avatar-math" style="--angle: 288deg;">λ</span>
+                    <!-- Math decorations removed -->
                 </div>
             </div>
         </div>
-        <div class="hero-scroll">
-            <span>Scroll Down</span>
-            <div class="scroll-indicator"></div>
+        <div class="hero-quote">
+            <span class="quote-text">"Carpe Diem"</span>
         </div>
     </section>
 
@@ -146,21 +135,17 @@
             <div class="about-content">
                 <div class="about-image">
                     <div class="image-frame">
-                        <div class="frame-glow"></div>
-                        <img src="Profile pictures/DSC00757 3.jpg" alt="Oshadha Kariyawasam" class="profile-image">
+                        <img src="Profile pictures/greek statue.png" alt="Oshadha Kariyawasam" class="profile-image">
                     </div>
                 </div>
                 <div class="about-text">
-                    <h3 class="about-subtitle">AI Enthusiast & Math Lover</h3>
+                    <h3 class="about-subtitle">AI Developer & Math Enthusiast</h3>
                     <p>
-                        I'm an undergraduate student pursuing a BSc (Hons) in Artificial Intelligence at the
-                        <strong>University of Moratuwa, Sri Lanka</strong> — one of the leading engineering
-                        universities in South Asia.
+                        I am currently pursuing a BSc (Hons) in Artificial Intelligence at the
+                        <strong>University of Moratuwa, Faculty of IT</strong>. My core interests lie at the intersection of AI, Machine Learning, Data Science, Mathematics, and Statistics.
                     </p>
                     <p>
-                        My passion lies in building intelligent systems that solve real-world problems.
-                        I have a deep love for <strong>computational mathematics</strong> — from linear algebra
-                        and calculus to optimization algorithms that power modern AI.
+                        My passion is <strong>building intelligent systems</strong> and optimizing predictive models. I love leveraging data-driven solutions and computational mathematics to solve complex, real-world problems.
                     </p>
                     <div class="about-info">
                         <div class="info-item">
@@ -190,109 +175,94 @@
             <div class="skills-grid">
                 <div class="skill-category">
                     <h3 class="category-title">
-                        <span class="material-icons-outlined category-icon">code</span>
-                        Programming Languages
+                        <span class="material-icons-outlined category-icon">psychology</span>
+                        Machine Learning & AI
                     </h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <span class="skill-name">Python</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="90"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">C++</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="80"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">JavaScript</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="70"></div>
-                            </div>
-                        </div>
+                    <div class="skill-nodes">
+                        <span class="skill-node">Scikit-Learn</span>
+                        <span class="skill-node">Pandas</span>
+                        <span class="skill-node">NumPy</span>
+                        <span class="skill-node">SciPy</span>
+                        <span class="skill-node">LightGBM</span>
+                        <span class="skill-node">LangGraph</span>
+                        <span class="skill-node">TensorFlow</span>
+                        <span class="skill-node">PyTorch</span>
+                        <span class="skill-node">OR-Tools</span>
                     </div>
                 </div>
 
                 <div class="skill-category">
                     <h3 class="category-title">
-                        <span class="material-icons-outlined category-icon">psychology</span>
-                        AI & Machine Learning
+                        <span class="material-icons-outlined category-icon">code</span>
+                        Programming Languages
                     </h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <span class="skill-name">TensorFlow</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="75"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">PyTorch</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="70"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Jupyter</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="85"></div>
-                            </div>
-                        </div>
+                    <div class="skill-nodes">
+                        <span class="skill-node">Python</span>
+                        <span class="skill-node">TypeScript</span>
+                        <span class="skill-node">JavaScript</span>
+                        <span class="skill-node">Java</span>
+                        <span class="skill-node">C/C++</span>
+                        <span class="skill-node">HTML/CSS</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="category-title">
+                        <span class="material-icons-outlined category-icon">web</span>
+                        Web Development
+                    </h3>
+                    <div class="skill-nodes">
+                        <span class="skill-node">Next.js</span>
+                        <span class="skill-node">React</span>
+                        <span class="skill-node">NestJS</span>
+                        <span class="skill-node">Node.js</span>
+                        <span class="skill-node">Spring Boot</span>
+                        <span class="skill-node">FastAPI</span>
+                        <span class="skill-node">Tailwind CSS</span>
+                        <span class="skill-node">Prisma</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="category-title">
+                        <span class="material-icons-outlined category-icon">storage</span>
+                        Databases & Data Tools
+                    </h3>
+                    <div class="skill-nodes">
+                        <span class="skill-node">SQL</span>
+                        <span class="skill-node">PostgreSQL</span>
+                        <span class="skill-node">MongoDB</span>
+                        <span class="skill-node">Qdrant</span>
+                        <span class="skill-node">DuckDB</span>
+                        <span class="skill-node">PyArrow</span>
                     </div>
                 </div>
 
                 <div class="skill-category">
                     <h3 class="category-title">
                         <span class="material-icons-outlined category-icon">memory</span>
-                        Hardware & IoT
+                        Development & Infrastructure
                     </h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <span class="skill-name">Arduino</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="85"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">ESP32</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="80"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Sensors & Control</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="75"></div>
-                            </div>
-                        </div>
+                    <div class="skill-nodes">
+                        <span class="skill-node">Docker</span>
+                        <span class="skill-node">Git</span>
+                        <span class="skill-node">Linux</span>
+                        <span class="skill-node">Nginx</span>
+                        <span class="skill-node">AWS</span>
+                        <span class="skill-node">Azure</span>
                     </div>
                 </div>
 
                 <div class="skill-category">
                     <h3 class="category-title">
-                        <span class="material-icons-outlined category-icon">calculate</span>
-                        Mathematics
+                        <span class="material-icons-outlined category-icon">router</span>
+                        Hardware & IoT
                     </h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <span class="skill-name">Linear Algebra</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="85"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Calculus & Optimization</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="80"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Statistics & Probability</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="75"></div>
-                            </div>
-                        </div>
+                    <div class="skill-nodes">
+                        <span class="skill-node">Arduino</span>
+                        <span class="skill-node">ESP32</span>
+                        <span class="skill-node">IoT</span>
+                        <span class="skill-node">Sensors</span>
                     </div>
                 </div>
             </div>
@@ -319,13 +289,33 @@
                         <span class="achievement-tag">Hackathon</span>
                         <h3 class="achievement-title">IEEE EMBS BioFusion Hackathon</h3>
                         <p class="achievement-description">
-                            Secured 1st Runner Up position at the IEEE EMBS BioFusion Hackathon organized by
-                            IEEE EMBS Student Chapter USJ. Won 15,000 LKR prize.
+                            Secured 1st Runner Up by developing an innovative Medical AI solution for Gastric Cancer Detection using Digital Pathology. Engineered a Hybrid CNN-Vision Transformer model for advanced H&E image classification, demonstrating capabilities in computer vision and biomedical engineering.
                         </p>
                         <div class="achievement-meta">
-                            <span><span class="material-icons-outlined">calendar_today</span> 2026</span>
-                            <span><span class="material-icons-outlined">location_on</span> University of Sri
-                                Jayewardenepura</span>
+                            <span><span class="material-icons-outlined">calendar_today</span> Jan 2026</span>
+                            <span><span class="material-icons-outlined">location_on</span> USJ</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="achievement-card">
+                    <div class="achievement-image">
+                        <img src="Achivements/𝟮𝗻𝗱 𝗥𝘂𝗻𝗻𝗲𝗿-𝗨𝗽 𝗼𝗳 𝗭𝗘𝗥𝟬-𝗗𝗔𝗬 CTF SLTC.jpeg"
+                            alt="Zero-Day CTF 2nd Runner Up" loading="lazy">
+                        <div class="achievement-badge">
+                            <span class="material-icons-outlined">workspace_premium</span>
+                            <span>2nd Runner Up</span>
+                        </div>
+                    </div>
+                    <div class="achievement-content">
+                        <span class="achievement-tag">CTF</span>
+                        <h3 class="achievement-title">Zero-Day CTF Competition</h3>
+                        <p class="achievement-description">
+                            Cybersecurity competition by SLTC featuring traditional CTF and AI security scenarios. Secured 3rd Place for demonstrating strong skills in AI security (LLM prompt injection, adversarial attacks, data poisoning) alongside web, cryptography, and forensic tasks.
+                        </p>
+                        <div class="achievement-meta">
+                            <span><span class="material-icons-outlined">calendar_today</span> Feb 2026</span>
+                            <span><span class="material-icons-outlined">location_on</span> SLTC</span>
                         </div>
                     </div>
                 </article>
@@ -340,15 +330,36 @@
                         </div>
                     </div>
                     <div class="achievement-content">
-                        <span class="achievement-tag">Competition</span>
+                        <span class="achievement-tag">Hackathon</span>
                         <h3 class="achievement-title">ICDS Conference 2025 - Mini Hackathon</h3>
                         <p class="achievement-description">
-                            Achieved 5th place at the ICDS Conference Mini Hackathon organized by
-                            Department of Statistics, Faculty of Science, University of Colombo.
+                            Three-round AI competition by University of Colombo. Secured 5th Place by developing an Agentic AI solution for Cinnamon Grand Hotel featuring customer clustering, an intelligent chatbot, and workflow automation to deliver personalized guest experiences.
                         </p>
                         <div class="achievement-meta">
                             <span><span class="material-icons-outlined">calendar_today</span> Nov 2025</span>
-                            <span><span class="material-icons-outlined">location_on</span> University of Colombo</span>
+                            <span><span class="material-icons-outlined">location_on</span> UOC</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="achievement-card">
+                    <div class="achievement-image">
+                        <img src="Achivements/Data Storm 7.0.jpg" alt="Data Storm 7.0 Finalist" loading="lazy">
+                        <div class="achievement-badge">
+                            <span class="material-icons-outlined">workspace_premium</span>
+                            <span>Finalist</span>
+                        </div>
+                    </div>
+                    <div class="achievement-content">
+                        <span class="achievement-tag">Hackathon</span>
+                        <h3 class="achievement-title">Data Storm 7.0 by Octave</h3>
+                        <p class="achievement-description">
+                            Finalist in Data Storm 7.0. Developed a scalable Lakehouse pipeline with advanced feature engineering, LightGBM quantile regression, and MILP optimization to estimate unconstrained FMCG demand. Built an interactive Streamlit dashboard with explainable AI for business decision-making.
+                        </p>
+                        <div class="achievement-meta">
+                            <span><span class="material-icons-outlined">calendar_today</span> Jun 2026</span>
+                            <span><span class="material-icons-outlined">location_on</span> UOM</span>
+                            <span><span class="material-icons-outlined">domain</span> Octave</span>
                         </div>
                     </div>
                 </article>
@@ -363,6 +374,173 @@
             <p class="section-subtitle">Some of my recent work</p>
 
             <div class="projects-grid">
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <span class="material-icons-outlined project-icon">inventory_2</span>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="https://github.com/Oxshadha/OptiWMS" target="_blank" rel="noopener"
+                                class="project-link">View Project</a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-tag">Logistics</span>
+                        <h3 class="project-title">OptiWMS</h3>
+                        <p class="project-description">
+                            Collaborative Warehouse Management System featuring demand forecasting and storage optimization via MILP.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Java</span>
+                            <span class="tech-badge">Next.js</span>
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">OR-Tools</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <span class="material-icons-outlined project-icon">data_exploration</span>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="https://github.com/Oxshadha/urban-mobility-intelligence" target="_blank" rel="noopener"
+                                class="project-link">View Project</a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-tag">Data Science</span>
+                        <h3 class="project-title">Urban Mobility Intelligence</h3>
+                        <p class="project-description">
+                            Local-first medallion ETL pipeline for NYC Taxi demand forecasting using DuckDB and PyArrow.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">DuckDB</span>
+                            <span class="tech-badge">Scikit-Learn</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <span class="material-icons-outlined project-icon">flight_takeoff</span>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="https://www.piyoway.com" target="_blank" rel="noopener"
+                                class="project-link">View Project</a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-tag">Full-Stack</span>
+                        <h3 class="project-title">Piyoway Tourist Guide</h3>
+                        <p class="project-description">
+                            PWA-enabled tourism platform consolidating LangChain-powered trip planning and destination discovery.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Next.js</span>
+                            <span class="tech-badge">NestJS</span>
+                            <span class="tech-badge">LangChain</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <span class="material-icons-outlined project-icon">quiz</span>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="https://quizzlyedu.com" target="_blank" rel="noopener"
+                                class="project-link">View Project</a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-tag">Web App</span>
+                        <h3 class="project-title">Quizzly Master</h3>
+                        <p class="project-description">
+                            AI-Powered Quiz Platform with agentic workflows to automate summary creation and quiz generation.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-badge">React</span>
+                            <span class="tech-badge">Node.js</span>
+                            <span class="tech-badge">MongoDB</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <span class="material-icons-outlined project-icon">group_work</span>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="https://github.com/Oxshadha/Vendrai" target="_blank" rel="noopener"
+                                class="project-link">View Project</a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-tag">Multi-Agent System</span>
+                        <h3 class="project-title">Vendrai</h3>
+                        <p class="project-description">
+                            Parallel multi-agent B2B workflow automating supplier onboarding and invoice exception handling.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-badge">LangGraph</span>
+                            <span class="tech-badge">Next.js</span>
+                            <span class="tech-badge">FastAPI</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <span class="material-icons-outlined project-icon">insights</span>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="https://github.com/Oxshadha/Data-Storm-7.0-InsightAI" target="_blank" rel="noopener"
+                                class="project-link">View Project</a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-tag">Data Science</span>
+                        <h3 class="project-title">Data Storm 7.0: Beverage Demand & Promotions</h3>
+                        <p class="project-description">
+                            Beverage demand forecasting and promotions divide analysis using Spatio-Temporal Causal Framework.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">LightGBM</span>
+                            <span class="tech-badge">Lakehouse</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <span class="material-icons-outlined project-icon">security</span>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="https://github.com/Oxshadha/Foreman" target="_blank" rel="noopener"
+                                class="project-link">View Project</a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-tag">Tooling</span>
+                        <h3 class="project-title">Foreman</h3>
+                        <p class="project-description">
+                            Privacy-first prompt assistant for safer, clearer vibe coding.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-badge">TypeScript</span>
+                        </div>
+                    </div>
+                </article>
+
                 <article class="project-card">
                     <div class="project-image">
                         <div class="project-placeholder">
@@ -385,42 +563,6 @@
                             <span class="tech-badge">Arduino</span>
                             <span class="tech-badge">ESP32</span>
                         </div>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <span class="material-icons-outlined project-icon">biotech</span>
-                        </div>
-                        <div class="project-overlay">
-                            <a href="https://github.com/Oxshadha/Bio-Fusion" target="_blank" rel="noopener"
-                                class="project-link">View Project</a>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <span class="project-tag">Hackathon</span>
-                        <h3 class="project-title">Bio-Fusion</h3>
-                        <p class="project-description">
-                            An innovative hackathon project exploring the intersection of
-                            biology and technology with machine learning applications.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-badge">Python</span>
-                            <span class="tech-badge">Jupyter</span>
-                            <span class="tech-badge">ML</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project-card project-card-cta">
-                    <div class="cta-content">
-                        <span class="material-icons-outlined cta-icon">auto_awesome</span>
-                        <h3 class="cta-title">More Coming Soon</h3>
-                        <p class="cta-text">Check out my GitHub for the latest projects and contributions.</p>
-                        <a href="https://github.com/Oxshadha" target="_blank" rel="noopener" class="btn btn-primary">
-                            Visit GitHub
-                        </a>
                     </div>
                 </article>
             </div>
@@ -476,8 +618,16 @@
                                     <span>AI/ML Project</span>
                                 </label>
                                 <label class="interest-tag">
+                                    <input type="checkbox" name="interest[]" value="Data Science">
+                                    <span>Data Science</span>
+                                </label>
+                                <label class="interest-tag">
                                     <input type="checkbox" name="interest[]" value="Robotics">
                                     <span>Robotics</span>
+                                </label>
+                                <label class="interest-tag">
+                                    <input type="checkbox" name="interest[]" value="IoT">
+                                    <span>IoT</span>
                                 </label>
                                 <label class="interest-tag">
                                     <input type="checkbox" name="interest[]" value="Collaboration">
@@ -555,13 +705,18 @@
                             d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z" />
                     </svg>
                 </a>
+                <a href="https://medium.com/@kariyawasamoshadha" target="_blank" rel="noopener" class="footer-social-link" aria-label="Medium">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M2.846 6.887c.03-.295-.083-.586-.303-.784l-2.24-2.7v-.403h6.958l5.378 11.795 4.728-11.795h6.633v.403l-1.916 1.837c-.165.126-.247.333-.213.538v13.498c-.034.204.048.411.213.537l1.871 1.837v.403h-9.412v-.403l1.939-1.882c.19-.19.19-.246.19-.537v-10.91l-5.389 13.688h-.728l-6.275-13.688v9.174c-.052.385.076.774.347 1.052l2.52 3.058v.404h-7.148v-.404l2.521-3.058c.27-.279.39-.67.338-1.052v-10.608z"/>
+                    </svg>
+                </a>
             </div>
             <p class="footer-copyright">&copy; 2026 Oshadha Kariyawasam. All rights reserved</p>
         </div>
     </footer>
 
     <!-- JavaScript -->
-    <script src="script.js"></script>
+    <script src="script.js?v=8"></script>
 </body>
 
 </html>
